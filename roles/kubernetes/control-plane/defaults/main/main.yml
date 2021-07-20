@@ -197,3 +197,6 @@ event_ttl_duration: "1h0m0s"
 
 ## Automatically renew K8S control plane certificates on first Monday of each month
 auto_renew_certificates: false
+
+# Disable Controller Manager Lifecycle Policy that prevents Bare Metal Node to be functional
+kube_controller_disable_node_lifecycle_policy: false
