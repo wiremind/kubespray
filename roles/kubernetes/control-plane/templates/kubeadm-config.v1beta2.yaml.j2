@@ -182,6 +182,7 @@ apiServer:
     audit-log-maxage: "{{ audit_log_maxage }}"
     audit-log-maxbackup: "{{ audit_log_maxbackups }}"
     audit-log-maxsize: "{{ audit_log_maxsize }}"
+    audit-log-format: "legacy"
 {% endif %}
 {% if kubernetes_audit_webhook %}
     audit-webhook-config-file: {{ audit_webhook_config_file }}
@@ -197,6 +198,7 @@ apiServer:
 {% if kube_feature_gates %}
     feature-gates: {{ kube_feature_gates|join(',') }}
 {% endif %}
+    feature-gates=EphemeralContainers: "true"
 {% if cloud_provider is defined and cloud_provider in ["openstack", "azure", "vsphere", "aws"] %}
     cloud-provider: {{ cloud_provider }}
     cloud-config: {{ kube_config_dir }}/cloud_config
