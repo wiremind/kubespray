@@ -210,7 +210,11 @@ apiServer:
     feature-gates: "{{ kube_apiserver_feature_gates | default(kube_feature_gates, true) | join(',') }}"
 {% endif %}
     feature-gates=EphemeralContainers: "true"
+<<<<<<< HEAD
 {% if cloud_provider is defined and cloud_provider in ["openstack", "azure", "vsphere", "aws", "gce"] %}
+=======
+{% if cloud_provider is defined and cloud_provider in ["openstack", "azure", "vsphere", "aws"] %}
+>>>>>>> e1b0ad55 (Merge pull request #2 from wiremind/test)
     cloud-provider: {{ cloud_provider }}
     cloud-config: {{ kube_config_dir }}/cloud_config
 {% endif %}
