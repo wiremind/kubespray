@@ -195,9 +195,6 @@ apiServer:
 {% for key in kube_kubeadm_apiserver_extra_args %}
     {{ key }}: "{{ kube_kubeadm_apiserver_extra_args[key] }}"
 {% endfor %}
-{% if kube_feature_gates %}
-    feature-gates: {{ kube_feature_gates|join(',') }}
-{% endif %}
     feature-gates=EphemeralContainers: "true"
 {% if cloud_provider is defined and cloud_provider in ["openstack", "azure", "vsphere", "aws"] %}
     cloud-provider: {{ cloud_provider }}
