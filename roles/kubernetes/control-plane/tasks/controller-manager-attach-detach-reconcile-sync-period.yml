@@ -11,6 +11,5 @@
     # Replace the line if present
     state: present
     regexp: '^    - --attach-detach-reconcile'
-    backup: yes
   notify:
     - "Master | Restart kube-controller-manager"
