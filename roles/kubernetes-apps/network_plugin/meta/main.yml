@@ -31,6 +31,6 @@ dependencies:
       - kube-router
 
   - role: kubernetes-apps/network_plugin/multus
-    when: kube_network_plugin_multus
+    when: kube_network_plugin_multus|default(false)|bool
     tags:
       - multus

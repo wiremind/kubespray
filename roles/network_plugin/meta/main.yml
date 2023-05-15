@@ -48,6 +48,6 @@ dependencies:
       - custom_cni
 
   - role: network_plugin/multus
-    when: kube_network_plugin_multus
+    when: kube_network_plugin_multus|default(false)|bool
     tags:
       - multus
